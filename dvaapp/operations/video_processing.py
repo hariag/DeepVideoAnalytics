@@ -48,7 +48,7 @@ class WVideo(object):
 
     def detect_csv_segment_format(self):
         self.csv_format = {}
-        command ="ffprobe -i {}1.mp4 -show_frames -select_streams v:0 -print_format csv=nokey=0".format(self.segments_dir)
+        command ="ffprobe -i {}0.mp4 -show_frames -select_streams v:0 -print_format csv=nokey=0".format(self.segments_dir)
         csv_format_lines = sp.check_output(shlex.split(command))
         for line in csv_format_lines.splitlines():
             if line.strip():
